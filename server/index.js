@@ -1,13 +1,16 @@
-require("dotenv").config();
-const express = require("express");
+import express from "express";
+import dotenv from "dotenv";
+import cors from "cors";
+import Connection from "./db.js";
+import userRoutes from "./routes/users.js";
+import authRoutes from "./routes/auth.js";
+
 const app = express();
-const cors = require("cors");
-const connection = require("./db");
-const userRoutes = require("./routes/users");
-const authRoutes = require("./routes/auth");
+
+dotenv.config();
 
 // database connection
-connection();
+Connection();
 
 // middlewares
 app.use(express.json());

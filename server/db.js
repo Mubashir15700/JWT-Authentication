@@ -1,15 +1,14 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
-module.exports = () => {
-	const connectionParams = {
-		useNewUrlParser: true,
-		useUnifiedTopology: true,
-	};
-	try {
-		mongoose.connect(process.env.DB, connectionParams);
-		console.log("Connected to database successfully");
-	} catch (error) {
-		console.log(error);
-		console.log("Could not connect to database!");
-	}
-};
+const Connection = async () => {
+    const localURL = "mongodb://127.0.0.1:27017/CRUD-app";
+
+    try {
+        await mongoose.connect(process.env.DB, { useUnifiedTopology: true, useNewUrlParser: true });
+        console.log("Connected to database succesfully.");
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export default Connection;

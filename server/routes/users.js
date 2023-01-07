@@ -1,6 +1,8 @@
-const router = require("express").Router();
-const { User, validate } = require("../models/user");
-const bcrypt = require("bcrypt");
+import express from "express";
+import { User, validate } from "../models/user.js";
+import bcrypt from "bcrypt";
+
+const router = express.Router();
 
 router.post("/", async (req, res) => {
 	try {
@@ -24,4 +26,4 @@ router.post("/", async (req, res) => {
 	}
 });
 
-module.exports = router;
+export default router;

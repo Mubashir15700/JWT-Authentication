@@ -39,7 +39,7 @@ const Signup = () => {
 		<div className={styles.signup_container}>
 			<div className={styles.signup_form_container}>
 				<div className={styles.left}>
-					<h1>Welcome Back</h1>
+					<p>Already have an account?</p>
 					<Link to="/login">
 						<button type="button" className={styles.white_btn}>
 							Sing in
